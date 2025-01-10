@@ -14,7 +14,7 @@ mkdir -p $INSTALL_DIR
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     info "start install e9path and hopper's e9 plugins ..."
     cd hopper-instrument/e9-mode
-    PREFIX=$INSTALL_DIR ./build.sh
+    CXX=g++ PREFIX=$INSTALL_DIR ./build.sh
     cd ../../
 
     if [ ! -x $INSTALL_DIR/patchelf ]; then
