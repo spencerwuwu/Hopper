@@ -39,7 +39,7 @@ find_core_for_task_set() {
     echo "free cores: ${USED_CORES[@]}"
 
     for i in $(seq 0 $CORE_NUM); do
-        if [ "${USED_CORES[$i]}" -eq "0" ]; then
+        if [ "${USED_CORES[$i]}" -eq "1" ]; then
             echo "core $i is free, set task to it"
             TASK_SET_CMD="taskset -c $i"
             break
